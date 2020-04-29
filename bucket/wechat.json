@@ -1,5 +1,5 @@
 {
-    "version": "2.80",
+    "version": "2.9.0",
     "description": "Free messaging and calling app.",
     "homepage": "https://weixin.qq.com/",
     "license": {
@@ -7,7 +7,7 @@
         "url": "https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=default"
     },
     "url": "https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe#/dl.7z",
-    "hash": "d5b1642bad06fa4a1acf1b4c104be27c4209f316aa989ec4216fd5a2bde1ab70",
+    "hash": "4eb7fda85532da96b8cb9ddb27b1fcf5f1536b47b1d2ff762dd882fc4e597f06",
     "shortcuts": [
         [
             "wechat.exe",
@@ -19,5 +19,8 @@
         "Remove-Item \"$dir\\`$_15_\" -Force -Recurse",
         "Remove-Item \"$dir\\`$R5\" -Force -Recurse"
     ],
-    "checkver": "<span>.*?([\\d.]+) for Windows.*<br>"
+    "checkver": "([\\d.]+) for Windows.*<br>",
+    "autoupdate": {
+        "url": "https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe#/dl.7z"
+    }
 }
