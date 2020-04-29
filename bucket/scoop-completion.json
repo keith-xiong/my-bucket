@@ -9,7 +9,10 @@
     "psmodule": {
         "name": "scoop-completion"
     },
-    "post_install": "Import-Module scoop-completion",
+    "post_install": [
+        "Remove-Item \"$dir\\scoop-completion-$version\"",
+        "Import-Module scoop-completion"
+    ],
     "notes": [
         "To autoload scoop completions, add the following to your $PROFILE:",
         "'try { Import-Module scoop-completion -ea stop } catch { }'"
