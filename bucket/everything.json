@@ -1,0 +1,41 @@
+{
+    "version": "1.4.1.969",
+    "description": "Locate files and folders by name instantly.",
+    "homepage": "https://www.voidtools.com",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.voidtools.com/Everything-1.4.1.969.x64.zip",
+            "hash": "4dfe874836b1254cf6b8122874e03177b274d2c8d0b4576852c010758129a50c"
+        },
+        "32bit": {
+            "url": "https://www.voidtools.com/Everything-1.4.1.969.x86.zip",
+            "hash": "a489d5055e6306f8d3ab15e1213d223a96ff3b5d0b900f71ff91989cf2812b5c"
+        }
+    },
+    "bin": "Everything.exe",
+    "shortcuts": [
+        [
+            "Everything.exe",
+            "Everything"
+        ]
+    ],
+    "post_install": "& \"$dir\\Everything.exe\" -app-data -enable-run-as-admin -install-folder-context-menu",
+    "uninstaller": {
+        "script": "Start-Process \"$dir\\Everything.exe\" \"-uninstall\" -Wait"
+    },
+    "checkver": "Download Everything ([\\d.]+)",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.voidtools.com/Everything-$version.x64.zip"
+            },
+            "32bit": {
+                "url": "https://www.voidtools.com/Everything-$version.x86.zip"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/Everything-$version.sha256"
+        }
+    }
+}
