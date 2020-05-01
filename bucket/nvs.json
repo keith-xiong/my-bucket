@@ -14,12 +14,14 @@
     },
     "env_add_path": "nodejs\\bin",
     "post_install": [
-        "\"$dir\\nodejs\\settings.json\" |",
-        "Where-Object { !(Test-Path $_) } |",
-        "ForEach-Object { @{ linkToSystem = $false } | ConvertTo-Json | Out-File -encoding \"ASCII\" $_ }"
+        "\"$dir\\nodejs\\settings.json\" | Where-Object { !(Test-Path $_) } |",
+        "ForEach-Object { ConvertTo-Json @{ linkToSystem = $global } | Out-File $_ -Encoding Ascii }",
+        "\"$dir\\defaults.json\" | ForEach-Object { (Get-Content -raw $_) -replace",
+        "'(?<=node\": ).*', '\"https://npm.taobao.org/mirrors/node/\"' | Out-File $_ -Encoding Ascii }",
+        "nvs -v"
     ],
     "uninstaller": {
-        "script": "nvs unlink | Out-Null"
+        "script": "nvs uninstall"
     },
     "checkver": "github",
     "autoupdate": {
