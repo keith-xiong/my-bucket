@@ -13,7 +13,7 @@
         },
         "32bit": {
             "url": "https://resource.u-tools.cn/currentversion/uTools-0.8.9-beta-ia32.exe#/dl.7z",
-            "hash": "sha512:621391eb9702a01b480f6bbe24bbf241135e3da5d9fb703f5ca1fa9c80c1d847fbf41513dd23a8af26b161935ba47e9996636c434b2021d531c53e5d29f01ab4",
+            "hash": "sha512:92019133c0daba93233b16fd29e44a4f6032782321ce2805e7b4894f16184f84b90557e29dc77c91b04df5e47eed00ed9bdd5df382de84ce349b8504a6c0d5f5",
             "installer": {
                 "script": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR/app-32.7z\" \"$dir\""
             }
@@ -27,25 +27,23 @@
         ]
     ],
     "checkver": {
-        "url": "https://resource.u-tools.cn/currentversion/latest.yml?",
-        "regex": "uTools-([\\w.-]+).exe"
+        "url": "https://resource.u-tools.cn/currentversion/latest.yml?t=$timestamp",
+        "regex": "(?s)version:\\s*([^\\n]*).*sha512:\\s*([^\\n]*)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://resource.u-tools.cn/currentversion/uTools-$version.exe#/dl.7z",
+                "url": "https://resource.u-tools.cn/currentversion/uTools-$version.exe?t=$timestamp#/dl.7z",
                 "hash": {
-                    "url": "https://resource.u-tools.cn/currentversion/latest.yml?",
-                    "mode": "extract",
-                    "regex": "sha512: $base64"
+                    "url": "$baseurl/latest.yml?t=$timestamp",
+                    "find": "sha512:\\s*($match2)"
                 }
             },
             "32bit": {
-                "url": "https://resource.u-tools.cn/currentversion/uTools-$version-ia32.exe#/dl.7z",
+                "url": "https://resource.u-tools.cn/currentversion/uTools-$version-ia32.exe?t=$timestamp#/dl.7z",
                 "hash": {
-                    "url": "https://resource.u-tools.cn/currentversion/latest-ia32.yml?",
-                    "mode": "extract",
-                    "regex": "sha512: $base64"
+                    "url": "$baseurl/latest-ia32.yml?t=$timestamp",
+                    "regex": "sha512:\\s*$base64"
                 }
             }
         }
