@@ -8,7 +8,7 @@ on:
   push:
     branches: [ master ]
   schedule:
-    - cron: '11 * * * *'
+    - cron: '47 * * * *'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -25,20 +25,14 @@ jobs:
     - name: install scoop
       run: |
         iwr -useb get.scoop.sh | iex
-        echo "::add-path::~\scoop\shims"
+        echo "::add-path::$home\scoop\shims"
 
-    - name: install hub
-      run: |
-        scoop install hub
-        hub config --global user.name github-actions
-        hub config --global user.email qx@qianxi.ml
-
-    - name: hack timestamp
-      run: bin\hackTimestamp.ps1
+    - name: hacks
+      run: bin\hacks.ps1
 
     - name: auto-pr
       run: |
         $ErrorActionPreference = 'Continue'
+        hub config --global user.name github-actions
+        hub config --global user.email qx@qianxi.ml
         bin\auto-pr.ps1 -Push
-      env:
-        SCOOP_DEBUG: true
