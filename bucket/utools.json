@@ -33,14 +33,14 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://resource.u-tools.cn/currentversion/uTools-$version.exe?t=$timestamp#/dl.7z",
+                "url": "https://resource.u-tools.cn/currentversion/uTools-$version.exe#/dl.7z",
                 "hash": {
                     "url": "$baseurl/latest.yml?t=$timestamp",
                     "find": "sha512:\\s*($match2)"
                 }
             },
             "32bit": {
-                "url": "https://resource.u-tools.cn/currentversion/uTools-$version-ia32.exe?t=$timestamp#/dl.7z",
+                "url": "https://resource.u-tools.cn/currentversion/uTools-$version-ia32.exe#/dl.7z",
                 "hash": {
                     "url": "$baseurl/latest-ia32.yml?t=$timestamp",
                     "regex": "sha512:\\s*$base64"

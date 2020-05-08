@@ -25,7 +25,7 @@ jobs:
     - name: install scoop
       run: |
         iwr -useb get.scoop.sh | iex
-        echo "::add-path::$home\scoop\shims"
+        "::add-path::$home\scoop\shims"
 
     - name: hacks
       run: bin\hacks.ps1
@@ -35,4 +35,4 @@ jobs:
         $ErrorActionPreference = 'Continue'
         hub config --global user.name github-actions
         hub config --global user.email qx@qianxi.ml
-        bin\auto-pr.ps1 -Push
+        bin\auto-pr.ps1 -Push -SpecialSnowflakes $env:SpecialSnowflakes
