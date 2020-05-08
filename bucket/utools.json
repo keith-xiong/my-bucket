@@ -5,15 +5,15 @@
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://resource.u-tools.cn/currentversion/uTools-1.0.2-beta.exe?t=1588762148#/dl.7z",
-            "hash": "sha512:d0abd1b840b05102f4eb9f0a44f62b500f402f156faa153e655f709d13dad189910187bd8fa1c71dff369750f1a30d4d3f30b23fd114f44091d03e5229eaf94d",
+            "url": "https://resource.u-tools.cn/currentversion/uTools-1.0.2-beta.exe#/dl.7z",
+            "hash": "sha512:204d81dc3914d28ca94d865b77412145a9fdbec5a6fd0a6a3ed95e9f8a46a7f32ceeec4d70f4a5df01779556f130b0f520d2cbdb07ad793b5280944ae55f652c",
             "installer": {
                 "script": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR/app-64.7z\" \"$dir\""
             }
         },
         "32bit": {
-            "url": "https://resource.u-tools.cn/currentversion/uTools-1.0.2-beta-ia32.exe?t=1588762147#/dl.7z",
-            "hash": "sha512:63329d509d5384ac4140090b34868832738d94c2b51cd85380163047bf02c087fde6703c73554788d5d333b250df432f74e589e5018711e114c0a6a272ff5ff0",
+            "url": "https://resource.u-tools.cn/currentversion/uTools-1.0.2-beta-ia32.exe#/dl.7z",
+            "hash": "sha512:905eaed611573521ccf01324cda9b391cea4e4cba49b90f72addac5d005f9dca26831ca990e5b1b55b20cf7773e504ff82f645815c82a6cdde3e4cb26b26e237",
             "installer": {
                 "script": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR/app-32.7z\" \"$dir\""
             }
