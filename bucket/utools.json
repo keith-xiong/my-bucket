@@ -5,14 +5,14 @@
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://resource.u-tools.cn/currentversion/uTools-1.1.1.exe#/dl.7z",
+            "url": "https://res.u-tools.cn/currentversion/uTools-1.1.1.exe#/dl.7z",
             "hash": "sha512:83face806d5a26eab3995339cb17f19729b3dd51552a36d575216067d5a8dd666dc37992a658a7a8452868a6c3dbe5546d71b234f671308438777ef0afa562dd",
             "installer": {
                 "script": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR/app-64.7z\" \"$dir\""
             }
         },
         "32bit": {
-            "url": "https://resource.u-tools.cn/currentversion/uTools-1.1.1-ia32.exe#/dl.7z",
+            "url": "https://res.u-tools.cn/currentversion/uTools-1.1.1-ia32.exe#/dl.7z",
             "hash": "sha512:f6af20122954682bf7d0631b611f3263e49253509b324bffc26f1d19944f3133c3ca8563423c08fec688a690aab773f035ad8900975afd36a41b1787cccd3f05",
             "installer": {
                 "script": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR/app-32.7z\" \"$dir\""
@@ -27,20 +27,20 @@
         ]
     ],
     "checkver": {
-        "url": "https://resource.u-tools.cn/currentversion/latest.yml?t=$timestamp",
+        "url": "https://res.u-tools.cn/currentversion/latest.yml?t=$timestamp",
         "regex": "(?s)version:\\s*([^\\n]*).*sha512:\\s*([^\\n]*)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://resource.u-tools.cn/currentversion/uTools-$version.exe#/dl.7z",
+                "url": "https://res.u-tools.cn/currentversion/uTools-$version.exe#/dl.7z",
                 "hash": {
                     "url": "$baseurl/latest.yml?t=$timestamp",
                     "find": "sha512:\\s*($match2)"
                 }
             },
             "32bit": {
-                "url": "https://resource.u-tools.cn/currentversion/uTools-$version-ia32.exe#/dl.7z",
+                "url": "https://res.u-tools.cn/currentversion/uTools-$version-ia32.exe#/dl.7z",
                 "hash": {
                     "url": "$baseurl/latest-ia32.yml?t=$timestamp",
                     "regex": "sha512:\\s*$base64"

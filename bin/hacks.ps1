@@ -14,17 +14,17 @@ function substitute($entity, [Hashtable] $params, [Bool]$regexEscape = $false) {
 }
 
 # 设置 hosts 直连获取更新
-@(
-    "`n"
-    "124.161.37.35 resource.u-tools.cn"
-) |
-Out-File "$env:windir\System32\drivers\etc\hosts" -Append -Encoding ascii
+# @(
+#     "`n"
+#     "124.161.37.35 resource.u-tools.cn"
+# ) |
+# Out-File "$env:windir\System32\drivers\etc\hosts" -Append -Encoding ascii
 
-ipconfig /flushdns
+# ipconfig /flushdns
 
 # 添加 force update
-$SpecialSnowflakes = @(
-    "utools"
-) -join ","
+# $SpecialSnowflakes = @(
+#     "utools"
+# ) -join ","
 
-"::set-env name=SpecialSnowflakes::$SpecialSnowflakes"
+# "::set-env name=SpecialSnowflakes::$SpecialSnowflakes"
