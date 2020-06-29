@@ -14,17 +14,18 @@
         "script": [
             "sudo powershell -Command \"& {",
             "Get-ChildItem $dir -filter CascadiaCodePL.ttf | ForEach-Object {",
-            "    New-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Value $_.Name -Force | Out-Null",
-            "    Copy-Item $_.FullName -destination \"$env:windir\\Fonts\"",
-            "} }\""
+            "    New-ItemProperty -Path ((echo HKLM:\\SOFTWARE\\Microsoft\\Windows)+([char]32)+(echo NT\\CurrentVersion\\Fonts)) -Name `$_.Name.Replace(`$_.Extension, ([char]32)+(([char[]](40,41)) -join (echo TrueType))) -Value `$_.Name -Force | Out-Null",
+            "    Copy-Item `$_.FullName -destination `$env:windir\\Fonts",
+            "}",
+            "}\""
         ]
     },
     "uninstaller": {
         "script": [
             "sudo powershell -Command \"& {",
             "Get-ChildItem $dir -filter CascadiaCodePL.ttf | ForEach-Object {",
-            "    Remove-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Force -ErrorAction SilentlyContinue",
-            "    Remove-Item \"$env:windir\\Fonts\\$($_.Name)\" -Force -ErrorAction SilentlyContinue",
+            "    Remove-ItemProperty -Path ((echo HKLM:\\SOFTWARE\\Microsoft\\Windows)+([char]32)+(echo NT\\CurrentVersion\\Fonts)) -Name `$_.Name.Replace(`$_.Extension, ([char]32)+(([char[]](40,41)) -join (echo TrueType))) -Force -ErrorAction SilentlyContinue",
+            "    Remove-Item `$env:windir\\Fonts\\`$(`$_.Name) -Force -ErrorAction SilentlyContinue",
             "}",
             "Write-Host \"The '$app' font family has been uninstalled and will not be present after restarting your computer.\" -Foreground Magenta",
             "}\""
