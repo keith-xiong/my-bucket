@@ -1,5 +1,5 @@
 {
-    "version": "2.9.0",
+    "version": "2.9.5",
     "description": "Free messaging and calling app.",
     "homepage": "https://weixin.qq.com/",
     "license": {
@@ -7,7 +7,7 @@
         "url": "https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=default"
     },
     "url": "https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe#/dl.7z",
-    "hash": "4eb7fda85532da96b8cb9ddb27b1fcf5f1536b47b1d2ff762dd882fc4e597f06",
+    "hash": "973b429c4f9c1882340c3b8bfa066ae159b5dd409f876538e3820efbeb0a5ab4",
     "shortcuts": [
         [
             "wechat.exe",
