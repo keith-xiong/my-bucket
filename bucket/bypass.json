@@ -1,10 +1,10 @@
 {
-    "version": "1.14.20",
+    "version": "1.14.21",
     "description": "Bypass - Eaiser to buy your tickets",
     "homepage": "https://www.bypass.cn/",
     "license": "Freeware",
     "url": "https://www.bypass.cn/api/download?name=Bypass.zip#/dl.7z",
-    "hash": "32acd3ac01f7bd320de80d75b600050edd0fc24352725e9f3390e0075b85cd68",
+    "hash": "af45bd5a3ef6eabb78ffe8bc7081cfcdd1a0b6866a2ca382df1b8d8c0de86aba",
     "extract_dir": "Bypass",
     "shortcuts": [
         [
